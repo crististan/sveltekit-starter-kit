@@ -11,7 +11,7 @@ const config = {
 	},
 	preprocess: preprocess({
 		scss: {
-			prependData: `@import './static/styles/main.scss';`
+			prependData: `@import './src/lib/styles/main.scss';`
 		}
 	}),
 };
