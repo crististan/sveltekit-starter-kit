@@ -1,6 +1,19 @@
 @import "variables";
 @import "mixins";
 
-body {
-    background-color: #000;
+* {
+    box-sizing: border-box;
+}
+
+body,
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
 }

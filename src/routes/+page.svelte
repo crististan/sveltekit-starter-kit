@@ -1,12 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>SvelteKit Starter kit</h1>
+<p>A starter kit for SvelteKit projects to help developers quickly set up and start a new project with best practices and a structured environment.</p>
 
 <style lang="scss">
     h1 {
-        color: #fff;
+        font-size: 1.25rem;
 
         @include tablet() {
-            color: red;
+            font-size: 1.5rem;
         }
     }
 </style>
