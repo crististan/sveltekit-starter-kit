@@ -1,38 +1,77 @@
-# create-svelte
+# SvelteKit Starter Kit
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A starter kit for SvelteKit projects to help developers quickly set up and start a new project with best practices and a structured environment.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **SASS Support**: Pre-installed SASS for advanced styling capabilities.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Getting Started
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Prerequisites
 
-## Developing
+Make sure you have the following installed:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- [Node.js](https://nodejs.org/en/) (v14 or higher)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/crististan/sveltekit-starter-kit.git
+    cd sveltekit-starter-kit
+    ```
+
+2. **Install dependencies:**
+
+    Using npm:
+    ```bash
+    npm install
+    ```
+
+    Using Yarn:
+    ```bash
+    yarn install
+    ```
+
+3. **Rename the project:**
+
+    Change the project name in `package.json`:
+    ```json
+    {
+      "name": "your-project-name",
+      ...
+    }
+    ```
+
+    and in package-lock.json:
+    ```json  
+    {
+      "name": "your-project-name",
+      ...
+      "packages": {
+        "": {
+        "name": "your-project-name",
+        ...
+      }
+    }
+    ```
+
+### Development
+
+To start the development server:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+or
 
 ```bash
-npm run build
+yarn dev
 ```
 
-You can preview the production build with `npm run preview`.
+Open your browser and navigate to [http://localhost:3000](http://localhost:3000). You should see your SvelteKit app running.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
