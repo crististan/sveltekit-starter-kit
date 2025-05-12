@@ -117,12 +117,36 @@ You can preview the production build with `npm run preview`.
 
     ```svelte
     <script>
-        import { Button, Col, Row } from '@sveltestrap/sveltestrap';
+        import { 
+            Row,
+            Col, 
+            Card,
+            CardHeader,
+            CardBody,
+            CardTitle,
+            CardText,
+            Button
+        } from '@sveltestrap/sveltestrap';
     </script>
 
+    <h1>Posts</h1>
     <Row>
-        <Col>
-            <Button color="primary" outline>Hello World!</Button>
-        </Col>
+        {#each data.posts as post}
+            <Col 
+                xs="12" 
+                md="6" 
+                lg="3"
+                class="mb-4"
+            >
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{ post.title }</CardTitle>
+                    </CardHeader>
+                    <CardBody>
+                        <CardText>{ post.body }</CardText>
+                    </CardBody>
+                </Card>
+            </Col>
+        {/each}
     </Row>
     ```
