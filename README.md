@@ -78,3 +78,51 @@ You can preview the production build with `npm run preview`.
    </script>
    ```
 
+# How to add Bootstrap to a SvelteKit project using Sveltetrap
+
+## Installation
+
+1. Install the Sveltetrap package using one of the following commands:
+
+    ```bash
+    # npm
+    npm install @sveltestrap/sveltestrap
+
+    # pnpm
+    pnpm install @sveltestrap/sveltestrap
+
+    # yarn
+    yarn add @sveltestrap/sveltestrap
+    ```
+
+2. Add the stylesheet manually in "+layout.svelte" file or in CSS bundle:
+
+    ```svelte
+    <svelte:head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    </svelte:head>
+    ```
+
+    or
+
+    ```css
+    <style>
+        @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css';
+    </style>
+    ```
+
+## Usage
+
+3. Import and use Sveltestrap components in your svelte component
+
+    ```svelte
+    <script>
+        import { Button, Col, Row } from '@sveltestrap/sveltestrap';
+    </script>
+
+    <Row>
+        <Col>
+            <Button color="primary" outline>Hello World!</Button>
+        </Col>
+    </Row>
+    ```

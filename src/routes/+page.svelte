@@ -1,4 +1,15 @@
 <script>
+    import { 
+        Row,
+        Col, 
+        Card,
+        CardHeader,
+        CardBody,
+        CardTitle,
+        CardText,
+        Button
+    } from '@sveltestrap/sveltestrap';
+
     let { 
         data,
         error,
@@ -12,8 +23,26 @@
 
 <main>
     {#if data.posts.length > 0}
-        <h1>Data from the server:</h1>
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+        <h1>Posts</h1>
+        <Row>
+            {#each data.posts as post}
+                <Col 
+                    xs="12" 
+                    md="6" 
+                    lg="3"
+                    class="mb-4"
+                >
+                    <Card>
+                        <CardHeader>
+                          <CardTitle>{ post.title }</CardTitle>
+                        </CardHeader>
+                        <CardBody>
+                            <CardText>{ post.body }</CardText>
+                        </CardBody>
+                    </Card>
+                </Col>
+            {/each}
+        </Row>
     {:else}
         <p>No data available.</p>
     {/if}
