@@ -2,7 +2,7 @@
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Creating a project
+# Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!
 
@@ -14,7 +14,7 @@ npx sv create
 npx sv create my-app
 ```
 
-## Developing
+# Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
@@ -25,7 +25,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+# Building
 
 To create a production version of your app:
 
@@ -36,3 +36,45 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+# How to add Sass to a SvelteKit project
+
+## Installation
+
+1. Install dependencies:
+   ```bash
+   npm install --save-dev sass svelte-preprocess
+   npm install -D sass-embedded
+   ```
+
+## Configuration
+
+2. Update `svelte.config.js`:
+   ```javascript
+   import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+   
+   const config = {
+     preprocess: vitePreprocess()
+   };
+   
+   export default config;
+   ```
+
+## Usage
+
+3. In your .svelte files, use:
+   ```svelte
+   <style lang="scss">
+     // SCSS code here
+   </style>
+   ```
+
+4. To add global styles:
+   - Create `app.scss` file in your project
+   - Import it in `+layout.svelte`:
+   ```svelte
+   <script>
+     import "../app.scss";
+   </script>
+   ```
+
