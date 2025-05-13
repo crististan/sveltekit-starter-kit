@@ -1,16 +1,12 @@
 <script>
     import { 
         Row,
-        Col, 
-        Card,
-        CardHeader,
-        CardBody,
-        CardTitle,
-        CardText,
+        Col,
         Button
     } from '@sveltestrap/sveltestrap';
 
     import Modal from '$lib/components/Modal.svelte';
+    import Card from '$lib/components/Card.svelte';
     
     let { 
         data,
@@ -44,19 +40,14 @@
                     lg="3"
                     class="mb-4"
                 >
-                    <Card>
-                        <CardHeader>
-                          <CardTitle>{ post.title }</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>{ post.body }</CardText>
-                            <Button 
-                                color="primary" 
-                                outline
-                                on:click={() => showModal(post.title, post.body)}
-                            >Details</Button>
-                        </CardBody>
-                    </Card>
+                    <Card
+                        cardTitle={post.title}
+                        cardDescription={post.body}
+                        cardButton={{
+                            label: "Details",
+                            onClick: () => showModal(post.title, post.body)
+                        }}
+                    />
                 </Col>
             {/each}
         </Row>
