@@ -42,6 +42,10 @@
                 >
                     <Card
                         cardTitle={post.title}
+                        cardImage={{
+                            src: "https://cdn.pixabay.com/photo/2025/03/31/21/18/tiber-river-9505401_1280.jpg",
+                            alt: "image"
+                        }}
                         cardDescription={post.body}
                         cardButton={{
                             label: "Details",

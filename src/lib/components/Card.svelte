@@ -12,6 +12,7 @@
 
     let {
         cardTitle,
+        cardImage,
         cardSubtitle,
         cardDescription,
         cardButton,
@@ -26,6 +27,9 @@
         </CardHeader>
     {/if}
     <CardBody>
+        {#if cardImage}
+            <img class="mb-3" src={cardImage.src} alt={cardImage.alt} />
+        {/if}
         {#if cardSubtitle}
             <CardSubtitle>{ cardSubtitle }</CardSubtitle>
         {/if}
