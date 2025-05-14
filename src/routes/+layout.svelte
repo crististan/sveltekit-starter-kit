@@ -6,8 +6,8 @@
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/vendor/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/css/bootstrap-icons/bootstrap-icons.css">
 </svelte:head>
 
 <Container>
