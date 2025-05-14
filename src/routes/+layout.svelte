@@ -1,6 +1,7 @@
 <script>
     import "../app.scss";
     import { Container } from "@sveltestrap/sveltestrap";
+    import Modal from "$lib/components/Modal.svelte";
     import Toast from "$lib/components/Toast.svelte";
 </script>
 
@@ -13,4 +14,5 @@
     <slot />
 </Container>
 
+<Modal />
 <Toast />

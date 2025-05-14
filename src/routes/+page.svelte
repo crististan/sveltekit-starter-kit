@@ -4,9 +4,9 @@
         Col,
         Button
     } from '@sveltestrap/sveltestrap';
+    import { showModal } from '$lib/utils/modal.svelte.js';
     import { showToast } from '$lib/utils/toast.svelte.js';
 
-    import Modal from '$lib/components/Modal.svelte';
     import Card from '$lib/components/Card.svelte';
     
     let { 
@@ -14,16 +14,6 @@
         error,
         status
     } = $props();
-
-    let isModalOpen = $state(false);
-    let modalHeader = $state("");
-    let modalBody = $state("");
-
-    const showModal = (header, body) => {
-        isModalOpen = !isModalOpen;
-        modalHeader = header || "";
-        modalBody = body || "";
-    };
 
     console.log('data: ', data);
     console.log('error: ', error);
@@ -53,7 +43,7 @@
                         cardDescription={post.body}
                         cardButton={{
                             label: "Details",
-                            onClick: () => showModal(post.title, post.body)
+                            onClick: () => showModal(post.title, post.body, null, null)
                         }}
                     />
                 </Col>
@@ -62,13 +52,6 @@
     {:else}
         <p>No data available.</p>
     {/if}
-
-    <Modal
-        isOpen={isModalOpen}
-        toggle={showModal}
-        {modalHeader}
-        {modalBody}
-    />
 </main>
 
 <style lang="scss">

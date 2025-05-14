@@ -1,21 +1,15 @@
 <script>
-    import { 
-        Modal
-    } from '@sveltestrap/sveltestrap';
+    import { getModalData, closeModal } from "$lib/utils/modal.svelte";
+    import { Modal } from "@sveltestrap/sveltestrap";
 
-    let { 
-        isOpen,
-        toggle,
-        modalHeader,
-        modalBody
-    } = $props();
+    let modalData = getModalData();
 </script>
 
 <Modal 
     body 
-    header={ modalHeader }
-    {isOpen} 
-    {toggle}
+    header={modalData.title}
+    isOpen={modalData.isOpen} 
+    toggle={closeModal}
 >
-    { modalBody }
+    { modalData.content }
 </Modal>
