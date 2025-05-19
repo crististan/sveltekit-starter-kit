@@ -23,7 +23,7 @@
 <main>
     <button class="btn btn-outline-primary" onclick={() => showToast("This is a success toast message", "success")}>Show success toast</button>
     <button class="btn btn-outline-primary" onclick={() => showToast("This is an info toast message", "info")}>Show info toast</button>
-    
+
     {#if data.posts.length > 0}
         <h1>Posts</h1>
         <Row>
