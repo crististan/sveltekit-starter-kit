@@ -1,6 +1,6 @@
 <script>
+    import { enhance } from '$app/forms';
     import { 
-        Form, 
         FormGroup,
         Input, 
         Button 
@@ -10,16 +10,17 @@
         formTitle,
         formDescription,
         formFields,
-        formSubmitAction,
         formSubmitLabel,
-        formMessage,
+        formMessages,
     } = $props();
   </script>
 
-<Form
+<form
     class="mb-3"
-    onsubmit={formSubmitAction}
-    method="POST"
+    method="post"
+    action="/contact"
+    use:enhance
+    novalidate
 >
     {#if formTitle}
       <h2>{formTitle}</h2>
@@ -36,5 +37,12 @@
         {/if}
         </FormGroup>
     {/each}
+    {#if formMessages}
+        {#each formMessages.message as formMessage}
+            <div class="alert alert-{formMessage.success ? "success" : "danger"}" role="alert">
+                {formMessage.message}
+            </div>
+        {/each}
+    {/if}
     <Button type="submit" color="primary">{ formSubmitLabel }</Button>
-</Form>
+</form>
