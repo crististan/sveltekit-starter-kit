@@ -37,7 +37,7 @@
         {/if}
         </FormGroup>
     {/each}
-    {#if form}
+    {#if formMessages}
         {#each formMessages.message as formMessage}
             <div class="alert alert-{formMessage.success ? "success" : "danger"}" role="alert">
                 {formMessage.message}
