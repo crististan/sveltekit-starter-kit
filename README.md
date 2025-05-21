@@ -62,20 +62,20 @@ You can preview the production build with `npm run preview`.
 
 ## Usage
 
-3. In your .svelte files, use:
-   ```svelte
-   <style lang="scss">
-     // SCSS code here
-   </style>
-   ```
-
-4. To add global styles:
+3. To add global styles:
    - Create `app.scss` file in your project
    - Import it in `+layout.svelte`:
    ```svelte
    <script>
      import "../app.scss";
    </script>
+   ```
+
+4. In your .svelte files, use:
+   ```svelte
+   <style lang="scss">
+     // SCSS code here
+   </style>
    ```
 
 # How to add Bootstrap to a SvelteKit project using Sveltetrap

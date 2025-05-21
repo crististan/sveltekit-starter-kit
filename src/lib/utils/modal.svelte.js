@@ -12,7 +12,7 @@ export function getModalData() {
 
 /** 
  * @param {string} title - The title of the modal
- * @param {string} contenmt - The content of the modal
+ * @param {string} content - The content of the modal
  * @param {function} onConfirm - Callback function for confirm button
  * @param {function} onCancel - Callback function for cancel button
  * @returns void
