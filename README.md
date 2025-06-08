@@ -37,47 +37,6 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
-# How to add Sass to a SvelteKit project
-
-## Installation
-
-1. Install dependencies:
-   ```bash
-   npm install --save-dev sass svelte-preprocess
-   npm install -D sass-embedded
-   ```
-
-## Configuration
-
-2. Update `svelte.config.js`:
-   ```javascript
-   import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-   
-   const config = {
-     preprocess: vitePreprocess()
-   };
-   
-   export default config;
-   ```
-
-## Usage
-
-3. To add global styles:
-   - Create `app.scss` file in your project
-   - Import it in `+layout.svelte`:
-   ```svelte
-   <script>
-     import "../app.scss";
-   </script>
-   ```
-
-4. In your .svelte files, use:
-   ```svelte
-   <style lang="scss">
-     // SCSS code here
-   </style>
-   ```
-
 # How to add Bootstrap to a SvelteKit project using Sveltetrap
 
 ## Installation
