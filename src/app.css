@@ -4,18 +4,6 @@
     --font-family: 'Arial, sans-serif';
 }
 
-@mixin tablet() {
-    @media (min-width: 768px) {
-        @content;
-    }
-}
-
-@mixin desktop() {
-    @media (min-width: 1140px) {
-        @content;
-    }
-}
-
 img {
     width: 100%;
     height: auto;

@@ -1,5 +1,5 @@
 <script>
-    import "../app.scss";
+    import "../app.css";
     import { Container } from "@sveltestrap/sveltestrap";
     import Modal from "$lib/components/Modal.svelte";
     import Toast from "$lib/components/Toast.svelte";
