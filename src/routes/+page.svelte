@@ -43,7 +43,7 @@
                         cardDescription={post.body}
                         cardButton={{
                             label: "Details",
-                            onClick: () => showModal(post.title, post.body, null, null)
+                            onClick: () => showModal(post.title, `<strong>${post.body}</strong>`, null, null)
                         }}
                     />
                 </Col>
@@ -54,6 +54,7 @@
     {/if}
 </main>
 
+
 <style lang="scss">
     main {
         padding: 1rem;
@@ -63,6 +64,13 @@
     }
 
     h1 {
-            color: var(--primary-color);
-        }
+        color: var(--primary-color);
+        font-size: 20px;
+        margin: 12px 0
+    }
+    @media (min-width: 768px) {
+        h1 {
+        font-size: 24px;
+    }
+    }
 </style>
