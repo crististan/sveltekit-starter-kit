@@ -43,7 +43,7 @@
                         cardDescription={post.body}
                         cardButton={{
                             label: "Details",
-                            onClick: () => showModal(post.title, `<strong>${post.body}</strong>`, null, null)
+                            onClick: () => showModal(post.title, `<strong>${post.body}</strong>`)
                         }}
                     />
                 </Col>

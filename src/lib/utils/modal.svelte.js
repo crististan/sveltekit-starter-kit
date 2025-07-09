@@ -18,7 +18,7 @@ export function getModalData() {
  * @returns void
  */
 
-export function showModal(title, content, onConfirm, onCancel) {
+export function showModal(title, content, onConfirm = null, onCancel = null) {
     modalData.isOpen = true;
     modalData.title = title;
     modalData.content = content;

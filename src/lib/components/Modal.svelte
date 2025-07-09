@@ -1,13 +1,29 @@
 <script>
     import { getModalData, closeModal } from "$lib/utils/modal.svelte";
-    import { Modal } from "@sveltestrap/sveltestrap";
 
     let modalData = getModalData();
+
+    function handleKeydown(e) {
+        if (modalData.isOpen && e.key === 'Escape') {
+            closeModal();
+        }
+    }
 </script>
 
-<div class="modal" class:open={modalData.isOpen}>
-  <div class="modal-content">
+<svelte:window onkeydown={handleKeydown} />
+
+<div 
+    class={`modal ${modalData.isOpen ? 'open' : ''}`}
+    role="dialog"
+    aria-modal="true"
+    tabindex="-1"
+    onclick={closeModal}
+>
+  <div class="modal-content" onclick={(e) => e.stopPropagation()}>
     <div class="modal-header">
+        {#if modalData.title}
+            <h5 class="modal-title">{ modalData.title }</h5>
+        {/if}
         <button type="button" class="close-button" onclick={closeModal}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
@@ -16,7 +32,6 @@
     </div>
     
     <div class="modal-body">
-        <!-- <slot /> -->
         {@html modalData.content }
     </div>
 
