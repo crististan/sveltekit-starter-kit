@@ -1,15 +1,9 @@
+import { fetchData } from "$lib/utils/api";
+
 export async function load() {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok' + response.statusText);
-        }
-
-        const data = await response.json();
-        return { posts: data };
-    } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-        return { posts: [] }; // Return an empty array on error
-    }
+    const posts = await fetchData('https://jsonplaceholder.typicode.com/postsa');
+    
+    return {
+        posts
+    };
 }
